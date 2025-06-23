@@ -63,6 +63,7 @@ app.post('/register', authBasic, async (req, res) => {
       qrCode: qrImage,
     });
   } catch (err) {
+    console.error('❌ Error al registrar usuario:', err);
     res.status(500).json({ error: 'Error en el registro' });
   }
 });
